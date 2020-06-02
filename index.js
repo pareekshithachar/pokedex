@@ -32,7 +32,7 @@ const getChar = async () => {
 };
 // getChar();
 const showChar = (res) => {
-  //   console.log(res.data);
+  console.log(res.data);
   //   let name = res.data.results;
   //   let nameparse = JSON.parse(name);
   //   nameparse.array.forEach((element) => {
@@ -55,7 +55,10 @@ const showChar = (res) => {
   <div class="card-body">
     <h5 class="card-title bruh">${res.data.name.toUpperCase()}</h5>
     <hr color="white">
-    <p class="card-text">Type: ${res.data.types[0].type.name}</p>
+    <p class="card-text">Type: ${
+      res.data.types[0].type.name.charAt(0).toUpperCase() +
+      res.data.types[0].type.name.slice(1)
+    }</p>
     <p class="card-text">Height: ${res.data.height} </p>
     <p class="card-text">Weight: ${res.data.weight} </p>
 
